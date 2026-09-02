@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>Lewis — Infrastructure &amp; Cloud</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -129,6 +130,49 @@
   footer p{ color: var(--text-dim); margin-bottom: 20px; }
   .contact-links{ display:flex; gap: 20px; flex-wrap: wrap; font-family: var(--mono); font-size: 14px; }
 
+  /* CONTACT FORM */
+  .contact-form{
+    display: flex; flex-direction: column; gap: 6px;
+    margin: 28px 0 32px;
+    max-width: 440px;
+  }
+  .contact-form label{
+    font-family: var(--mono); font-size: 12px; color: var(--text-dim);
+    margin-top: 14px;
+  }
+  .contact-form label:first-child{ margin-top: 0; }
+  .contact-form input, .contact-form textarea{
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    padding: 10px 12px;
+    resize: vertical;
+  }
+  .contact-form input:focus, .contact-form textarea:focus{
+    outline: none;
+    border-color: var(--amber);
+  }
+  .contact-form button{
+    margin-top: 18px;
+    align-self: flex-start;
+    background: transparent;
+    border: 1px solid var(--amber);
+    color: var(--amber);
+    font-family: var(--mono);
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .contact-form button:hover{
+    background: var(--amber);
+    color: var(--bg);
+  }
+
   @media (max-width: 480px){
     .wrap{ padding: 0 18px; }
     header.hero{ padding: 48px 0 40px; }
@@ -141,9 +185,9 @@
 <div class="wrap">
 
   <header class="hero">
-    <div class="status-line"><span class="dot"></span> AVAILABLE — OPEN TO OPPORTUNITIES</div>
+    <div class="status-line"><span class="dot"></span> BUILDING &amp; LEARNING — WEB &amp; CLOUD</div>
     <h1>Lewis<br>Infrastructure &amp; Cloud, Singapore</h1>
-    <p>Sysadmin background in RHEL patching and Windows Server incident handling, now building toward cloud automation and security. I fix things that break and build things that don't.</p>
+    <p>Sysadmin background in RHEL patching and Windows Server incident handling. This is where I document what I'm building and learning as I explore web and cloud development — a personal space for projects, not a job listing.</p>
     <div class="hero-links">
       <a href="#projects">Projects</a>
       <a href="#learning">Learning path</a>
@@ -194,11 +238,23 @@
 
   <footer id="contact">
     <div class="section-label">// CONTACT</div>
-    <p>Based in Singapore. Open to infrastructure, cloud, and automation roles.</p>
+    <p>Based in Singapore. Following along with web and cloud development as a personal learning track — feel free to reach out if you'd like to compare notes.</p>
+
+    <form action="https://formspree.io/f/mjyvwogk" method="POST" class="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your email</label>
+      <input type="email" id="email" name="_replyto" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Send message</button>
+    </form>
+
     <div class="contact-links">
-      <a href="#">Email</a>
       <a href="#">LinkedIn</a>
-      <a href="#">Download CV →</a>
     </div>
   </footer>
 
